@@ -10,14 +10,10 @@
       "format": "html"
     },
     "packageRules": [
-    {
-      "labels": [
-        "tailscale-updates"
-      ],
-      "matchPackageNames": [
-        "/tailscale/tailscale/"
-      ]
-    },
+      {
+        "labels": ["tailscale-updates"],
+        "matchPackageNames": ["/tailscale/tailscale/"]
+      },
       {
         "description": "Automerge updates",
         "automerge": true
