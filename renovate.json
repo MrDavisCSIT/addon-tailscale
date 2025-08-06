@@ -4,10 +4,14 @@
   "prHeader": "ADCM-Bot-Header",
   "assignees": ["mrdaviscsit"],
   "labels": ["dependencies-updater"],
+    "customDatasources": {
+    "tailscale": {
+      "defaultRegistryUrlTemplate": "https://pkgs.tailscale.com/stable/",
+      "format": "html"
+    },
   "packageRules": [
     {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch"],
+      "description": "Automerge updates",
       "automerge": true
     },
     {
@@ -16,7 +20,7 @@
     },
     {
       "matchDatasources": ["custom.tailscale"],
-      "extractVersion": "^tailscale_(?<version>.+)\\_amd64\\.tgz$"
+      "extractVersion": "^tailscale-setup-(?<version>.+)\.exe$"
     },
     {
       "matchFileNames": ["tailscale/**"],
@@ -27,11 +31,6 @@
         }
       ]
     }
-  ],
-  "customDatasources": {
-    "tailscale": {
-      "defaultRegistryUrlTemplate": "https://pkgs.tailscale.com/stable/",
-      "format": "html"
-    }
+  ]
   }
 }
