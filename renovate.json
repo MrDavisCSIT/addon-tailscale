@@ -10,17 +10,25 @@
       "format": "html"
     },
     "packageRules": [
+    {
+      "labels": [
+        "tailscale-updates"
+      ],
+      "matchPackageNames": [
+        "/tailscale/tailscale/"
+      ]
+    },
       {
         "description": "Automerge updates",
         "automerge": true
       },
       {
-        "matchPackageNames": ["tailscale"],
-        "changelogUrl": "https://tailscale.com/changelog"
+        "matchPackageNames": ["tailscale/tailscale"],
+        "changelogUrl": "https://tailscale.com/changelog#client"
       },
       {
         "matchDatasources": ["custom.tailscale"],
-        "extractVersion": "^tailscale-setup-(?<version>.+)\.exe$"
+        "extractVersion": "^tailscale-setup-(?<version>.+)\\.exe$"
       },
       {
         "matchFileNames": ["tailscale/**"],
