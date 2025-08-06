@@ -17,6 +17,23 @@
           {
       "matchPackageNames": ["tailscale"],
       "changelogUrl": "https://tailscale.com/changelog"
+    },
+          {
+      "matchDatasources": ["custom.tailscale"],
+      "extractVersion": "^tailscale_(?<version>.+)\\_amd64\\.tgz$"
     }
-  ]
+  ],
+    "customDatasources": {
+    "tailscale": {
+      "defaultRegistryUrlTemplate": "https://pkgs.tailscale.com/stable/",
+      "format": "html"
+    }
+  },
+    "bumpVersions": [
+    {
+      "name": "Updating release version file",
+      "filePatterns": ["/tailscale/config.yaml"],
+      "bumpType": "minor",
+      "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
+    }
 }
