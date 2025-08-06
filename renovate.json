@@ -36,4 +36,5 @@
       "bumpType": "minor",
       "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
     }
+    ]
 }
