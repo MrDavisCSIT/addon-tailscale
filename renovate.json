@@ -8,4 +8,15 @@
     "mrdaviscsit"
   ],
   "labels": ["dependencies-updater"],
+    "packageRules": [
+    {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+          {
+      "matchPackageNames": ["tailscale"],
+      "changelogUrl": "https://tailscale.com/changelog"
+    }
+  ]
 }
