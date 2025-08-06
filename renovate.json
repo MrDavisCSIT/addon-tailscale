@@ -32,7 +32,7 @@
     "bumpVersions": [
     {
       "name": "Updating release version file",
-      "filePatterns": ["/tailscale/config.yaml"],
+      "filePatterns": ["config.yaml"],
       "bumpType": "minor",
       "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
     }
