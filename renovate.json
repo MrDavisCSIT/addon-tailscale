@@ -29,12 +29,14 @@
       "format": "html"
     }
   },
-    "bumpVersions": [
     {
-      "name": "Updating release version file",
-      "filePatterns": ["config.yaml"],
-      "bumpType": "minor",
-      "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
+      "matchFileNames": ["tailscale/**"],
+      "bumpVersions": [
+        {
+          "filePatterns": ["{{packageFileDir}}/config.{yaml,yml}"],
+          "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
+        }
+      ]
     }
     ]
 }
