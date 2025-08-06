@@ -1,28 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "prHeader": "ADCM-Bot-Header",
-  "assignees": [
-    "mrdaviscsit"
-  ],
+  "assignees": ["mrdaviscsit"],
   "labels": ["dependencies-updater"],
-    "packageRules": [
+  "packageRules": [
     {
       "description": "Automerge non-major updates",
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
-          {
+    {
       "matchPackageNames": ["tailscale"],
       "changelogUrl": "https://tailscale.com/changelog"
     },
-          {
+    {
       "matchDatasources": ["custom.tailscale"],
       "extractVersion": "^tailscale_(?<version>.+)\\_amd64\\.tgz$"
     },
-      {
+    {
       "matchFileNames": ["tailscale/**"],
       "bumpVersions": [
         {
@@ -32,7 +28,7 @@
       ]
     }
   ],
-    "customDatasources": {
+  "customDatasources": {
     "tailscale": {
       "defaultRegistryUrlTemplate": "https://pkgs.tailscale.com/stable/",
       "format": "html"
