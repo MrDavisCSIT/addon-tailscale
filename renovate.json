@@ -15,18 +15,16 @@
         "matchPackageNames": ["/tailscale/tailscale/"]
       },
       {
-        "description": "Automerge updates",
-        "automerge": true
-      },
-      {
         "matchPackageNames": ["tailscale/tailscale"],
         "changelogUrl": "https://tailscale.com/changelog#client"
       },
       {
+        "matchPackageNames": ["/tailscale/tailscale/"]
         "matchDatasources": ["custom.tailscale"],
         "extractVersion": "^tailscale-setup-(?<version>.+)\\.exe$"
       },
       {
+        "matchPackageNames": ["/tailscale/tailscale/"]
         "matchFileNames": ["tailscale/**"],
         "bumpVersions": [
           {
@@ -34,6 +32,13 @@
             "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
           }
         ]
+      },
+      {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance", "rollback", "bump", "replacement"],
+      "automerge": true,
+      "automergeType": "pr",
+      "ignoreTests": true,
       }
     ]
   }
