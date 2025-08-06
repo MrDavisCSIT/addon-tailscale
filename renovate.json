@@ -4,33 +4,33 @@
   "prHeader": "ADCM-Bot-Header",
   "assignees": ["mrdaviscsit"],
   "labels": ["dependencies-updater"],
-    "customDatasources": {
+  "customDatasources": {
     "tailscale": {
       "defaultRegistryUrlTemplate": "https://pkgs.tailscale.com/stable/",
       "format": "html"
     },
-  "packageRules": [
-    {
-      "description": "Automerge updates",
-      "automerge": true
-    },
-    {
-      "matchPackageNames": ["tailscale"],
-      "changelogUrl": "https://tailscale.com/changelog"
-    },
-    {
-      "matchDatasources": ["custom.tailscale"],
-      "extractVersion": "^tailscale-setup-(?<version>.+)\.exe$"
-    },
-    {
-      "matchFileNames": ["tailscale/**"],
-      "bumpVersions": [
-        {
-          "filePatterns": ["{{packageFileDir}}/config.{yaml,yml}"],
-          "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
-        }
-      ]
-    }
-  ]
+    "packageRules": [
+      {
+        "description": "Automerge updates",
+        "automerge": true
+      },
+      {
+        "matchPackageNames": ["tailscale"],
+        "changelogUrl": "https://tailscale.com/changelog"
+      },
+      {
+        "matchDatasources": ["custom.tailscale"],
+        "extractVersion": "^tailscale-setup-(?<version>.+)\.exe$"
+      },
+      {
+        "matchFileNames": ["tailscale/**"],
+        "bumpVersions": [
+          {
+            "filePatterns": ["{{packageFileDir}}/config.{yaml,yml}"],
+            "matchStrings": ["version:\\s(?<version>[^\\s]+)"]
+          }
+        ]
+      }
+    ]
   }
 }
