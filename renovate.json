@@ -21,15 +21,8 @@
           {
       "matchDatasources": ["custom.tailscale"],
       "extractVersion": "^tailscale_(?<version>.+)\\_amd64\\.tgz$"
-    }
-  ],
-    "customDatasources": {
-    "tailscale": {
-      "defaultRegistryUrlTemplate": "https://pkgs.tailscale.com/stable/",
-      "format": "html"
-    }
-  },
-    {
+    },
+      {
       "matchFileNames": ["tailscale/**"],
       "bumpVersions": [
         {
@@ -38,5 +31,11 @@
         }
       ]
     }
-    ]
+  ],
+    "customDatasources": {
+    "tailscale": {
+      "defaultRegistryUrlTemplate": "https://pkgs.tailscale.com/stable/",
+      "format": "html"
+    }
+  }
 }
